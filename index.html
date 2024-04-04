@@ -16,6 +16,8 @@
 <br>
 Původní zdroj: hysteria.sk.<br>
 <br>
+vtip přebrán ze souborů pana Keršlágera na pslib.cz<br>
+    <br>
 Je možné pro “lov” žen použít stejné postupy jako pro hackování Unixu? Co praví “Červená kniha draka”?<br>
 <br>
 Distribuce a jádra<br>
@@ -38,7 +40,9 @@ UPOZORNĚNÍ: Velmi ojediněle se můžeme setkat se systémem typu transX, kter
 Pomocí programů typu womaNMAP pečlivě prohledáváme a snažíme se zjistit distribuci a třídu jádra (jádro není podmíněné distribucí). Následně zkoumáme také porty, na kterých stroj naslouchá. Důkladněji se zaměřujeme na porty 22, 23, 69, 79, 99 a 110. Nicméně nejdůležitější je zjistit, zda stroj náhodou není sdílený s jinými uživateli!<br>
 <br>
 Dále se snažíme odchytit hesla uživatelů (sniff), získat jejich ID, skutečné jméno a přístupová práva pro daný počítač. Je také vhodné získat informace o serveru od počítačů ve stejné síti nebo od ostatních počítačů v doméně…<br>
-3. ÚTOK<br>
+<br> 
+    <br>
+    3. ÚTOK<br>
 <br>
 Pokud zjistíme, že počítač je pro nás vhodný a připravený k útoku, měli bychom přejít do útoku. Postup by mohl být následující:<br>
 <br>
@@ -54,14 +58,16 @@ Po získání accountu na daném systému je vhodné pro získání UID 0 použ�
 <br>
 Pokud nezískáte práva superuživatele, můžete se pokusit zaútočit také na službu KISS, kterou řídí USTAd, a to pomocí kombinace standardních rozhraní rTTY a JAZYK. Musíme ale být opatrní, protože v případě neúspěchu je velká pravděpodobnost, že nám bude vytvořen (doufejme, že jen dočasný) záznam v souboru /etc/host.deny, ale může nastat také situace, že budou použity dokonce příkazy jako deluser nebo rm -rf v kombinaci s vaším login-názvem.<br>
 <br>
-Některé drsnější povahy preferují útoky typu BRUTE FORCE, které jsou vhodné hlavně na jádra třídy sadistic a příbuzné. Cílem je získání přístupu k službám finger (port 79), suck (port 69) a fuck (port 99). UPOZORNĚNÍ: Na systémy s jádrem romantic je tento druh útoku vysloveně kontraproduktivní a mnozí zapomínají na to, že se jejich činnost loguje a hrozí nejen odražení útoku, ale také zamezení přístupu a dokonce přímá fyzická konfrontace s administrátory, trusted hosty, jakož i s policií a jinými orgány státní moci...<br>
+Některé drsnější povahy preferují útoky typu BRUTE FORCE, které jsou vhodné hlavně na jádra třídy sadistic a příbuzné. Cílem je získání přístupu k službám finger (port 79), suck (port 69) a fuck (port 99).<br>
+    <br>
+    UPOZORNĚNÍ: Na systémy s jádrem romantic je tento druh útoku vysloveně kontraproduktivní a mnozí zapomínají na to, že se jejich činnost loguje a hrozí nejen odražení útoku, ale také zamezení přístupu a dokonce přímá fyzická konfrontace s administrátory, trusted hosty, jakož i s policií a jinými orgány státní moci...<br>
 <br>
 Na jádra typu romantic je proto nejvhodnější využít výše zmíněné exploity (kino, procházka.*, květiny).<br>
 <br>
 Na distribuci Blondian zabírá na 100% exploit na díru v správě paměti, nazývané mezi hackery KLIN-HLAVA. Ten je možné "tlačit" přes libovolný port. V této distribuci je výchozím povolení používání služeb finger a někdy i zmíněných fuck a suck.<br>
 <br>
 4. FIREWALLY<br>
-okud by někdo stále používal podobné zařízení s HW klíčem, je možné obejít blokaci pomocí portů 69 nebo 79, případně přesměrováním na jiné volné porty. Konfigurace a zprovoznění těchto zařízení v distribuci BrunetWare je poměrně obtížné a vyžaduje hodně času a zručnosti.<br>
+V minulosti byli na blokování služby fuck používány HW ochrany, první předchůdci firewallu, které až do zadání patřičného osobního klíče blokovaly port 99. Toto primitivní zařízení typu PASS.CUD se jež nepoužívá. Pokud by někdo stále používal podobné zařízení s HW klíčem, je možné obejít blokaci pomocí portů 69 nebo 79, případně přesměrováním na jiné volné porty. Konfigurace a zprovoznění těchto zařízení v distribuci BrunetWare je dost obtížné a vyžaduje hodně času a zručnosti.<br>
 <br>
 5. ZABARIKOVÁNÍ<br>
 Po dosažení ROOT LEVELU na cílovém počítači dochází často (hlavně v distribucích s jádry romantic) k zavedení sdílení disků a procesů a k synchronizaci userlistů, trusted hostů a k blokaci většiny portů pro vnější síť. V jádrech romantic je tato podpora přímo zabudována, avšak u jader sadistic, free a public je nutné tuto podporu dokompilovat jako zvláštní modul. V distribuci Blondian je rozběhnutí, využití a administrace těchto služeb téměř nemožné.<br>
