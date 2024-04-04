@@ -1,1 +1,72 @@
-<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta http-equiv="X-UA-Compatible" content="IE=edge">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <style>body{font-family:Brush Script MT}</style>   <title >Mýval</title></head><body>    <div class="text-center">     <h1 style="font-size:80px">Mýval</h1>    <img src="https://media.extra.cz/static/img/2020/12/be1c62f-77429-0_16_9_0-740x416.jpg" alt="" style="width: 90%; height: 90%; "></div></body></html>
+<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta http-equiv="X-UA-Compatible" content="IE=edge">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <style>body{font-family:Brush Script MT}</style>   <title >Mýval</title></head><body>    <div class="text-center">     <h1 style="font-size:80px">Mýval</h1>    <img src="https://media.extra.cz/static/img/2020/12/be1c62f-77429-0_16_9_0-740x416.jpg" alt="" style="width: 90%; height: 90%; ">
+<p>
+  Hackování ženských
+<br>
+Původní zdroj: hysteria.sk.
+<br>
+Je možné pro “lov” žen použít stejné postupy jako pro hackování Unixu? Co praví “Červená kniha draka”?
+<br>
+Distribuce a jádra<br>
+Mezi základní a veřejnosti nejznámější distribuce můžeme zařadit následující:
+<br>
+Blondian: Jádro třídy Public. Není příliš bezpečné a stabilní. Často se přeinstalovává, takže dlouhodobé užívání systému nepřichází v úvahu.<br>
+BrunetWare: Jádro typu Romantic. Stabilní a jedno z nejbezpečnějších (osobně pracuji na klonu BrunetWaru a jsem velmi spokojený).<br>
+Red Head: Jádro sadistic a příbuzné. Toto distro je velmi variabilní a závisí na administrátorovi, jaké použití bude nakonfigurováno. Bezpečnost je relativní.<br>
+<br>
+FreeBLACK - Jádro Free. Slouží převážně jako školní nebo firemní servery, takže získat konto není problém.<br>
+<br>
+OpenBLACK - Až na drobné rozdíly je tato distribuce shodná s předchozí.<br>
+<br>
+UPOZORNĚNÍ: Velmi ojediněle se můžeme setkat se systémem typu transX, který není plnohodnotným systémem, ale pouhou emulací! Ačkoli se navenek snaží přizpůsobit jako klasický systém, není vybaven nejdůležitějším portem, a proto nás nezajímá. Stejně tak nás nezajímají komerční distribuce typu BX* či MS Whoress.<br>
+<br>
+2. ZÍSKÁVÁNÍ INFORMACÍ O SYSTÉMU<br>
+<br>
+Pomocí programů typu womaNMAP pečlivě prohledáváme a snažíme se zjistit distribuci a třídu jádra (jádro není podmíněné distribucí). Následně zkoumáme také porty, na kterých stroj naslouchá. Důkladněji se zaměřujeme na porty 22, 23, 69, 79, 99 a 110. Nicméně nejdůležitější je zjistit, zda stroj náhodou není sdílený s jinými uživateli!<br>
+<br>
+Dále se snažíme odchytit hesla uživatelů (sniff), získat jejich ID, skutečné jméno a přístupová práva pro daný počítač. Je také vhodné získat informace o serveru od počítačů ve stejné síti nebo od ostatních počítačů v doméně…<br>
+3. ÚTOK<br>
+<br>
+Pokud zjistíme, že počítač je pro nás vhodný a připravený k útoku, měli bychom přejít do útoku. Postup by mohl být následující:<br>
+<br>
+Otestujeme zranitelnost serveru na běžné exploity, například exploity třídy pozváním (např. pozváním.kino, pozváním.procházka, pozváním.bar). Někdy a pouze u některých jader je možné ochromit bezpečnost pomocí utility c2h5oh (snooping), kterou můžeme zamaskovat v nějakém běžném programu, například juice (tzv. trojan).<br>
+<br>
+POZOR! Tuto techniku není možné použít, pokud je připojený ROOT. S utilitou c2h5oh není vhodné si hrát, pokud jsme nezkušení, protože by mohlo dojít k DoS nejen na cílovém počítači, ale i na localhost.<br>
+<br>
+Snažíme se získat pozici TRUSTED HOST, případně nabouráme jiný systém, o kterém víme, že je v .rhosts. Alternativně použijeme jiné techniky, abychom se dostali do .rhosts.<br>
+<br>
+Jako další krok by mělo následovat rušení .rhostů, omezování procesů, paměti a nastavení kvót ostatním uživatelům. Důležité je také co nejvíce zaneprázdnit administrátory stroje, na kterém útočíme. Kontrola pošty a monitorování komunikace a procesů také není na škodu.<br>
+<br>
+Po získání accountu na daném systému je vhodné pro získání UID 0 použít multisystémový a multipatformní exploit KVETINY, který je úspěšný v 90 %. I když obrana proti tomuto zákeřnému útoku je velmi obtížná, doporučujeme použít alespoň verzi ROSES 3.0 a vyšší. V případě neúspěchu se pokuste útok zopakovat…<br>
+<br>
+Pokud nezískáte práva superuživatele, můžete se pokusit zaútočit také na službu KISS, kterou řídí USTAd, a to pomocí kombinace standardních rozhraní rTTY a JAZYK. Musíme ale být opatrní, protože v případě neúspěchu je velká pravděpodobnost, že nám bude vytvořen (doufejme, že jen dočasný) záznam v souboru /etc/host.deny, ale může nastat také situace, že budou použity dokonce příkazy jako deluser nebo rm -rf v kombinaci s vaším login-názvem.<br>
+<br>
+Některé drsnější povahy preferují útoky typu BRUTE FORCE, které jsou vhodné hlavně na jádra třídy sadistic a příbuzné. Cílem je získání přístupu k službám finger (port 79), suck (port 69) a fuck (port 99). UPOZORNĚNÍ: Na systémy s jádrem romantic je tento druh útoku vysloveně kontraproduktivní a mnozí zapomínají na to, že se jejich činnost loguje a hrozí nejen odražení útoku, ale také zamezení přístupu a dokonce přímá fyzická konfrontace s administrátory, trusted hosty, jakož i s policií a jinými orgány státní moci...<br>
+<br>
+Na jádra typu romantic je proto nejvhodnější využít výše zmíněné exploity (kino, procházka.*, květiny).<br>
+<br>
+Na distribuci Blondian zabírá na 100% exploit na díru v správě paměti, nazývané mezi hackery KLIN-HLAVA. Ten je možné "tlačit" přes libovolný port. V této distribuci je výchozím povolení používání služeb finger a někdy i zmíněných fuck a suck.<br>
+<br>
+4. FIREWALLY<br>
+okud by někdo stále používal podobné zařízení s HW klíčem, je možné obejít blokaci pomocí portů 69 nebo 79, případně přesměrováním na jiné volné porty. Konfigurace a zprovoznění těchto zařízení v distribuci BrunetWare je poměrně obtížné a vyžaduje hodně času a zručnosti.<br>
+<br>
+5. ZABARIKOVÁNÍ<br>
+Po dosažení ROOT LEVELU na cílovém počítači dochází často (hlavně v distribucích s jádry romantic) k zavedení sdílení disků a procesů a k synchronizaci userlistů, trusted hostů a k blokaci většiny portů pro vnější síť. V jádrech romantic je tato podpora přímo zabudována, avšak u jader sadistic, free a public je nutné tuto podporu dokompilovat jako zvláštní modul. V distribuci Blondian je rozběhnutí, využití a administrace těchto služeb téměř nemožné.<br>
+<br>
+6. LEGISLATIVA<br>
+UPOZORNĚNÍ: Třeba si dávat pozor, protože zákon zakazuje využívání portů 69, 79 a hlavně 99 (služby suck, finger a hlavně fuck = síťový protokol pro výměnu a duplikaci dat) na nestabilních strojích, tedy strojích, které mají UPTIME menší než 15. Některé stroje se proto snaží klamat potenciální zájemce o využití těchto služeb používáním PATCHnutého uptimu, modifikací systémového času, případně využívají jiné maskovací techniky<br>
+<br>
+7. BACKDOORY<br>
+Všeobecně se nedoporučuje zkoušet opakované využívání služeb pomocí zadních dveří (backdoor), přesto tato možnost existuje. Nejčastěji používaným backdoorem je vytvoření vlastního administrátorského účtu a změna rootovského hesla. Systém je potom na nás plně závislý. Další, avšak méně využívaný backdoor je odchytávání a zálohování privátního komunikačního klíče. Zablokování přístupu po odhalení je však velmi jednoduché – stačí tento klíč zaměnit za jiný a zůstaneme navždy bez přístupu do systému<br>
+<br>
+8.VŠEOBECNÉ RADY<br>
+Pokud se rozhodnete systém využívat ve větší míře, je vhodné jednou za čas provést reboot. Tímto krokem se znovu načte vaše konfigurace. Někdy však stačí pouze příkaz kill -FAC.ka 1. Tyto problémy s implementací správné konfigurace se vyskytují hlavně v distribucích s jádry sadistic a zejména free a public. Doporučujeme také provádět upgrady systému zaveditelnými moduly jádra DETi, ať už se jedná o aplikace X-Lapec nebo daemonem DEV-ce. Při instalaci je vhodné konzultovat s původními administratory systému.<br>
+<br>
+9. BEZPEČNOST A ŠIFROVÁNÍ<br>
+Tento návod berte s rezervou a hlavně při síťové komunikaci používejte ochranné prostředky, ať už hardwarové nebo softwarové (wrappery, …). Uvedené techniky nejsou vhodné pro použití na veřejných, nešifrovaných kanálech, ulicích nebo jiných místech obvyklého výskytu. Doporučujeme využívat kryptovanou komunikaci na neveřejném okruhu, odpojeném od ostatních sítí, případně pracovat přímo za systémovou konzolí.<br>
+<br>
+10. P2P A GROUPWARE<br>
+<br>
+V poslední době je možná i komunikace s více počítači najednou díky rozšíření sítí na sdílení dat (typu Peer to Peer) a multiplatformních sítí typu GROUPWARE. Do takových sítí většinou bývají zapojovány systémy s liberálnější user policy, které mají sdíleny i méně obvyklé porty. Takovéto sítě jsou často poloveřejné, a přístup k nim získáme až díky komunikaci přes IRC na kanálech #alt.swingers. Často jsou také spojovány s doménou sv. V těchto sítích je nutné obzvláště dodržovat pravidla bezpečnosti, protože zde hrozí výskyt virů, červů a trojských koní. Navíc do těchto sítí se aktivně zapojují počítače různých platforem, což nemusí každému vyhovovat<br>
+</p>
+
+</div></body></html>
